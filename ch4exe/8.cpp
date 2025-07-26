@@ -1,0 +1,73 @@
+/*
+Write a function 
+void removeComments(istream & is, ostream & os); 
+that copies characters from the input stream is to the output stream os, except 
+for characters that appear inside C++ comments.  Your implementation should 
+recognize both comment conventions: 
+• Any text beginning with /* and ending with * /, possibly many lines later. 
+• Any text beginning with //and extending through the end of the line. 
+The real C++ compiler needs to check to make sure that these characters are 
+not contained inside quoted strings, but you should feel free to ignore that 
+detail.  The problem is tricky enough as it stands. */
+#include<iostream>
+#include<fstream>
+#include"input.h"
+// command to run the file g++ 8.cpp input.cpp -o 8
+// in output some extra spaces comming up
+
+void removeComments(std::ifstream &infile, std::ofstream &outfile);
+
+int main() {
+    std::ifstream sourceFile;
+    promptUserForFile(sourceFile);
+
+    std::ofstream output;
+    output.open("8_out.cpp"); // will be the output file containign non commented code
+    removeComments(sourceFile,output);
+    sourceFile.close();
+    output.close();
+    return 0;
+}
+void removeComments(std::ifstream &infile, std::ofstream &outfile){
+    char ch;
+    while(infile.get(ch)){
+
+        // first identifying // comments and commenting them till end of line
+        bool flag=false;
+        if(ch=='/'){
+            infile.get(ch);
+            if(ch=='/'){
+                // it is comment so whole line should not be skipped
+                // find /n skipped the line for pushing
+                flag=true;
+                while(infile.get(ch)){
+                    if(ch=='\n') break;
+                }
+
+            }
+            else if(ch=='*'){
+                // it is a comment so section should be skipped until reach */ again
+                flag=true;
+                while(infile.get(ch)){
+                    if(ch=='*'){
+                        infile.get(ch);
+                        if(ch=='/') break;
+                    }
+                }
+            }
+            else{
+                // it is not a comment putting this character afte / again back to stream
+                infile.unget();
+            }
+            
+            // meaning it was not a comment and / should be included as it is not followed by another /
+            if(flag==false){
+                outfile.put('/');
+            }
+        }
+        else{
+            outfile.put(ch);
+        }        
+    }
+
+}
