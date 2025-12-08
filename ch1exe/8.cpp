@@ -13,15 +13,16 @@ int main() {
     cout<<"enter a positive integer : ";
     cin>>x;
     int rev=0;
-    int digit = x%10;
-    x /=10;
-    rev +=digit;
+    // int digit = x%10;
+    // x /=10;
+    // rev +=digit;
     while(x){
         int digit = x%10;
         x /=10;
-        rev *=10;
-        rev +=digit;
+        // rev *=10;
+        // rev +=digit;
+        cout<<digit;
     }
-    cout<< "the reversed integer is : "<<rev;
+    // cout<< "the reversed integer is : "<<rev;
     return 0;
 }

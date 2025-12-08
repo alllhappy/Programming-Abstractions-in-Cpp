@@ -55,3 +55,5 @@ bool isPrime(int x){
     }
     return true;
 }
+//approach 2 find all prime numbers less than n, then divide the by prime number and check, otherwise move to next prime
+//so instead of checking wheter the next is prime or not , we simply move to next prime number onlyhs
