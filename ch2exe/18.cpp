@@ -1,6 +1,8 @@
 /*prints a ying yang symbol*/
 #include<iostream>
 #include<graphics.h>
+
+// command to compile-> g++ 18.cpp -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
 const int radius=200;
 void ConcCircles(int x ,int y,colors outerColor);
 void BackFill(int col);

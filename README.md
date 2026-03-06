@@ -9,6 +9,7 @@ Initially I have uploaded solutions for the following chapters
 - Chapter 3: Strings
 - Chapter 4: Streams
 - Chapter 5: Collections
+- Chapter 6: Designing Classes
 - Chapter 7: Introduction to Recursion
 
 I have added the problem statement at the top of the respective code file itself.

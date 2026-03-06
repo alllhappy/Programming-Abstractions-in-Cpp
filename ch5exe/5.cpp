@@ -4,6 +4,7 @@ minimum, your interface should allow clients to specify the minimum and
 maximum values along with the size of each histogram range, but you should 
 feel free to provide other capabilities as well.  Use your imagination!*/
 
+//can make it better //not correct now
 #include<iostream>
 #include<vector>
 #include<iomanip>
@@ -32,7 +33,7 @@ std::vector<int> prepareFreq(std::ifstream &infile){
 int main() {
     std::ifstream infile;
     infile.open("4_ip.txt");
-    setSize(5);
+    setSize(10);
     std::vector<int> freq=prepareFreq(infile);
     showHistogramVertical(freq);
     infile.close();

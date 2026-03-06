@@ -6,6 +6,7 @@
 void filledArc(int col,int stRadius,int x,int y);
 void BackFill(int col);
 
+//command to compile-> g++ 16.cpp -o 16 -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
 
 int main() {
 

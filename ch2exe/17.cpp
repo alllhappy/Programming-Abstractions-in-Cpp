@@ -4,6 +4,8 @@
 #include<graphics.h>
 #include<vector>
 
+
+// command to compile-> g++ 17.cpp -o 17 -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
 void Filledsquare(int topX,int topY,int width,int height,colors col);
 void squareCircle(int topX,int topY,int width,int height,colors sqColor, colors cColor);
 void squareRow(int topX,int topY,int rowNo);

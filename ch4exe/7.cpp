@@ -8,7 +8,7 @@ one.  Nonalphabetic characters should remain unchanged.
 #include<iostream>
 #include<fstream>
 #include"input.h"
-#include"../daily/random.h" // from chapter 2
+#include"../dump/random.h" // from chapter 2
 
 // command to compile:  g++ 7.cpp input.cpp ../daily/random.cpp -o 7
 
